@@ -50,7 +50,7 @@ class ContactPresenter {
                     self.contactView?.setContacts(contacts: mappedUsers)
                 }
         }, onFailure: { (errorMessage) in
-            
+            self.contactView?.finishLoading()
         })
     }
 }

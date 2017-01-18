@@ -15,6 +15,7 @@ class ContactTableViewCell: UITableViewCell {
 
 class ContactViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let presenter = ContactPresenter(contactService: ContactService())
     var contactToDisplay = [ContactViewData]()
@@ -23,6 +24,7 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
         
         tableView?.dataSource = self
+        activityIndicator?.hidesWhenStopped = true
         
         presenter.attachView(view: self)
         presenter.getContacts()
@@ -52,10 +54,12 @@ extension ContactViewController: ContactView {
     
     func startLoading() {
         // Show your loader
+        activityIndicator?.startAnimating()
     }
     
     func finishLoading() {
         // Dismiss your loader
+        activityIndicator?.stopAnimating()
     }
     
     func setContacts(contacts: [ContactViewData]) {
