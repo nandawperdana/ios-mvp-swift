@@ -7,7 +7,7 @@ In this sample project includes some of useful pods for iOS, such as:
 - [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON): The better way to deal with JSON data in Swift
 
 ## Sample API
-This project using sample API from [AndroidHive](http://api.androidhive.info/contacts/)
+This project using sample API from [My Site](http://api.nandawperdana.com/people.json)
 
 ![mvp swift](https://raw.githubusercontent.com/nandawperdana/mvp-swift/master/Screenshoot/screenshoot.png)
 
