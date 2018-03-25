@@ -10,7 +10,7 @@ import Alamofire
 import SwiftyJSON
 import Foundation
 
-let API_BASE_URL = "http://api.androidhive.info"
+let API_BASE_URL = "http://api.nandawperdana.com"
 
 class APICallManager {
     static let instance = APICallManager()
@@ -21,34 +21,34 @@ class APICallManager {
     }
     
     enum Endpoint: String {
-        case Contacts = "/contacts"
+        case People = "/people.json"
     }
     
     // MARK: Contact
-    func callAPIGetContacts(
-        onSuccess successCallback: ((_ contacts: [ContactsModel]) -> Void)?,
+    func callAPIGetPeople(
+        onSuccess successCallback: ((_ people: [PeopleModel]) -> Void)?,
         onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
         
         // Build URL
-        let url = API_BASE_URL + Endpoint.Contacts.rawValue
+        let url = API_BASE_URL + Endpoint.People.rawValue
         
         // call API
         self.createRequest(
             url, method: .get, headers: nil, parameters: nil,
             onSuccess: {(responseObject: JSON) -> Void in
                 // Create dictionary
-                if let responseDict = responseObject["contacts"].arrayObject {
-                    let contactDict = responseDict as! [[String:AnyObject]]
+                if let responseDict = responseObject["data"].arrayObject {
+                    let peopleDict = responseDict as! [[String:AnyObject]]
                     
                     // Create object
-                    var contacts = [ContactsModel]()
-                    for item in contactDict {
-                        let contact = ContactsModel.build(item)
-                        contacts.append(contact)
+                    var data = [PeopleModel]()
+                    for item in peopleDict {
+                        let single = PeopleModel.build(item)
+                        data.append(single)
                     }
                     
                     // Fire callback
-                    successCallback?(contacts)
+                    successCallback?(data)
                 } else {
                     failureCallback?("An error has occured.")
                 }

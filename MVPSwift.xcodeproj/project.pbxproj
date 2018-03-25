@@ -17,10 +17,10 @@
 		F32E0DA11E2D15760068B4C5 /* MVPSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DA01E2D15760068B4C5 /* MVPSwiftTests.swift */; };
 		F32E0DAC1E2D15760068B4C5 /* MVPSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DAB1E2D15760068B4C5 /* MVPSwiftUITests.swift */; };
 		F32E0DC61E2D23990068B4C5 /* APICallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DC51E2D23990068B4C5 /* APICallManager.swift */; };
-		F32E0DCE1E2D30940068B4C5 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DCD1E2D30940068B4C5 /* ContactsModel.swift */; };
-		F360CF001E2E66D100691EEF /* ContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CEFF1E2E66D100691EEF /* ContactPresenter.swift */; };
-		F360CF021E2E678E00691EEF /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF011E2E678E00691EEF /* ContactService.swift */; };
-		F360CF041E2E6A3A00691EEF /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF031E2E6A3A00691EEF /* ContactViewController.swift */; };
+		F32E0DCE1E2D30940068B4C5 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */; };
+		F360CF001E2E66D100691EEF /* PeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */; };
+		F360CF021E2E678E00691EEF /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF011E2E678E00691EEF /* PeopleService.swift */; };
+		F360CF041E2E6A3A00691EEF /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF031E2E6A3A00691EEF /* PeopleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +63,10 @@
 		F32E0DAB1E2D15760068B4C5 /* MVPSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSwiftUITests.swift; sourceTree = "<group>"; };
 		F32E0DAD1E2D15760068B4C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F32E0DC51E2D23990068B4C5 /* APICallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICallManager.swift; sourceTree = "<group>"; };
-		F32E0DCD1E2D30940068B4C5 /* ContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
-		F360CEFF1E2E66D100691EEF /* ContactPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPresenter.swift; sourceTree = "<group>"; };
-		F360CF011E2E678E00691EEF /* ContactService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
-		F360CF031E2E6A3A00691EEF /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactViewController.swift; path = ../view/ContactViewController.swift; sourceTree = "<group>"; };
+		F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
+		F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePresenter.swift; sourceTree = "<group>"; };
+		F360CF011E2E678E00691EEF /* PeopleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
+		F360CF031E2E6A3A00691EEF /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleViewController.swift; path = ../view/PeopleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				F32E0DC51E2D23990068B4C5 /* APICallManager.swift */,
-				F360CF011E2E678E00691EEF /* ContactService.swift */,
+				F360CF011E2E678E00691EEF /* PeopleService.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 		F32E0DC11E2D23720068B4C5 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				F360CF031E2E6A3A00691EEF /* ContactViewController.swift */,
+				F360CF031E2E6A3A00691EEF /* PeopleViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 		F32E0DC21E2D23720068B4C5 /* presenter */ = {
 			isa = PBXGroup;
 			children = (
-				F360CEFF1E2E66D100691EEF /* ContactPresenter.swift */,
+				F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 		F32E0DC41E2D23720068B4C5 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				F32E0DCD1E2D30940068B4C5 /* ContactsModel.swift */,
+				F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -506,11 +506,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F360CF041E2E6A3A00691EEF /* ContactViewController.swift in Sources */,
-				F360CF001E2E66D100691EEF /* ContactPresenter.swift in Sources */,
-				F360CF021E2E678E00691EEF /* ContactService.swift in Sources */,
+				F360CF041E2E6A3A00691EEF /* PeopleViewController.swift in Sources */,
+				F360CF001E2E66D100691EEF /* PeoplePresenter.swift in Sources */,
+				F360CF021E2E678E00691EEF /* PeopleService.swift in Sources */,
 				F32E0DC61E2D23990068B4C5 /* APICallManager.swift in Sources */,
-				F32E0DCE1E2D30940068B4C5 /* ContactsModel.swift in Sources */,
+				F32E0DCE1E2D30940068B4C5 /* PeopleModel.swift in Sources */,
 				F32E0D8C1E2D15760068B4C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

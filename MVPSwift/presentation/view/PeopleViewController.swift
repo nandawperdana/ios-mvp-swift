@@ -13,12 +13,12 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var labelSubtitle: UILabel!
 }
 
-class ContactViewController: UIViewController {
+class PeopleViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let presenter = ContactPresenter(contactService: ContactService())
-    var contactToDisplay = [ContactViewData]()
+    let presenter = PeoplePresenter(peopleService: PeopleService())
+    var peopleToDisplay = [PeopleViewData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ContactViewController: UIViewController {
         activityIndicator?.hidesWhenStopped = true
         
         presenter.attachView(view: self)
-        presenter.getContacts()
+        presenter.getPeople()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,21 +36,21 @@ class ContactViewController: UIViewController {
     }
 }
 
-extension ContactViewController: UITableViewDataSource {
+extension PeopleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactToDisplay.count
+        return peopleToDisplay.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
-        let contactViewData = contactToDisplay[indexPath.row]
-        cell.labelTitle?.text = contactViewData.name
-        cell.labelSubtitle?.text = contactViewData.email
+        let peopleViewData = peopleToDisplay[indexPath.row]
+        cell.labelTitle?.text = peopleViewData.name
+        cell.labelSubtitle?.text = peopleViewData.email
         return cell
     }
 }
 
-extension ContactViewController: ContactView {
+extension PeopleViewController: PeopleView {
     
     func startLoading() {
         // Show your loader
@@ -62,13 +62,13 @@ extension ContactViewController: ContactView {
         activityIndicator?.stopAnimating()
     }
     
-    func setContacts(contacts: [ContactViewData]) {
-        contactToDisplay = contacts
+    func setPeople(people: [PeopleViewData]) {
+        peopleToDisplay = people
         tableView?.isHidden = false
         tableView?.reloadData()
     }
     
-    func setEmptyContact() {
+    func setEmptyPeople() {
         tableView?.isHidden = true
     }
 }

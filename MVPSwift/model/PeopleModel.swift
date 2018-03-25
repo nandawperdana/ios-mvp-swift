@@ -8,12 +8,13 @@
 
 import Foundation
 
-class ContactsModel {
+class PeopleModel {
     var id: String?
     var name: String?
     var email: String?
     var address: String?
     var gender: String?
+    var pic: String?
     var phone: PhoneModel?
     
     // MARK: Instance Method
@@ -33,14 +34,17 @@ class ContactsModel {
         if let data = dict["gender"] as? String {
             self.gender = data
         }
+        if let data = dict["pic"] as? String {
+            self.pic = data
+        }
         if let data = dict["phone"] as? [String:AnyObject] {
             self.phone = PhoneModel.build(data)
         }
     }
     
     // MARK: Class Method
-    class func build(_ dict: [String: AnyObject]) -> ContactsModel {
-        let contact = ContactsModel()
+    class func build(_ dict: [String: AnyObject]) -> PeopleModel {
+        let contact = PeopleModel()
         contact.loadFromDictionary(dict)
         return contact
     }
