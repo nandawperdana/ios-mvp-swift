@@ -10,6 +10,7 @@
 		30A0A6602B5A0A404767C58B /* Pods_MVPSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55158352D4095BDBD14EC85 /* Pods_MVPSwift.framework */; };
 		4E5133C81DAD1FA4AB1589E5 /* Pods_MVPSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D0283D4454B6612DBB3A16 /* Pods_MVPSwiftTests.framework */; };
 		5D924A25774C2215AED357FF /* Pods_MVPSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4876263E14204855A83599B /* Pods_MVPSwiftUITests.framework */; };
+		899A3FF82287171900AE0C65 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899A3FF72287171900AE0C65 /* PeopleViewController.swift */; };
 		F32E0D8C1E2D15760068B4C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0D8B1E2D15760068B4C5 /* AppDelegate.swift */; };
 		F32E0D911E2D15760068B4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32E0D8F1E2D15760068B4C5 /* Main.storyboard */; };
 		F32E0D931E2D15760068B4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32E0D921E2D15760068B4C5 /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		F32E0DCE1E2D30940068B4C5 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */; };
 		F360CF001E2E66D100691EEF /* PeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */; };
 		F360CF021E2E678E00691EEF /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF011E2E678E00691EEF /* PeopleService.swift */; };
-		F360CF041E2E6A3A00691EEF /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF031E2E6A3A00691EEF /* PeopleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +47,7 @@
 		5FD52004AF0AB61D420D5F71 /* Pods-MVPSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPSwift/Pods-MVPSwift.release.xcconfig"; sourceTree = "<group>"; };
 		69D0283D4454B6612DBB3A16 /* Pods_MVPSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B1C081FEBC4E7FB6FF00DB /* Pods-MVPSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPSwiftUITests/Pods-MVPSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		899A3FF72287171900AE0C65 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		C4876263E14204855A83599B /* Pods_MVPSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55158352D4095BDBD14EC85 /* Pods_MVPSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAFF0B0D8D9309C7D6C4452 /* Pods-MVPSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPSwiftTests/Pods-MVPSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
 		F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePresenter.swift; sourceTree = "<group>"; };
 		F360CF011E2E678E00691EEF /* PeopleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
-		F360CF031E2E6A3A00691EEF /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleViewController.swift; path = ../view/PeopleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,19 +187,10 @@
 		F32E0DC01E2D23720068B4C5 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F32E0DC11E2D23720068B4C5 /* controller */,
 				F32E0DC21E2D23720068B4C5 /* presenter */,
 				F32E0DC31E2D23720068B4C5 /* view */,
 			);
 			path = presentation;
-			sourceTree = "<group>";
-		};
-		F32E0DC11E2D23720068B4C5 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				F360CF031E2E6A3A00691EEF /* PeopleViewController.swift */,
-			);
-			path = controller;
 			sourceTree = "<group>";
 		};
 		F32E0DC21E2D23720068B4C5 /* presenter */ = {
@@ -213,6 +204,7 @@
 		F32E0DC31E2D23720068B4C5 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				899A3FF72287171900AE0C65 /* PeopleViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -237,7 +229,6 @@
 				F32E0D851E2D15750068B4C5 /* Frameworks */,
 				F32E0D861E2D15750068B4C5 /* Resources */,
 				86C1017CAD6C53E37C95B979 /* [CP] Embed Pods Frameworks */,
-				5C8D53D3014F4B554420D710 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,8 +247,6 @@
 				F32E0D981E2D15760068B4C5 /* Sources */,
 				F32E0D991E2D15760068B4C5 /* Frameworks */,
 				F32E0D9A1E2D15760068B4C5 /* Resources */,
-				CE036EB1AF67717A70F055B8 /* [CP] Embed Pods Frameworks */,
-				0AE98E7338B309849761B9A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,8 +266,6 @@
 				F32E0DA31E2D15760068B4C5 /* Sources */,
 				F32E0DA41E2D15760068B4C5 /* Frameworks */,
 				F32E0DA51E2D15760068B4C5 /* Resources */,
-				1A42F208CFC9F428320AAF92 /* [CP] Embed Pods Frameworks */,
-				F8776668B31094F4D8605C00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,64 +351,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0AE98E7338B309849761B9A6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVPSwiftTests/Pods-MVPSwiftTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A42F208CFC9F428320AAF92 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVPSwiftUITests/Pods-MVPSwiftUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		32ED5A73881446F3DCCB7754 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVPSwiftTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		5C8D53D3014F4B554420D710 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVPSwift/Pods-MVPSwift-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		86C1017CAD6C53E37C95B979 /* [CP] Embed Pods Frameworks */ = {
@@ -430,28 +375,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MVPSwift/Pods-MVPSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVPSwift/Pods-MVPSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE036EB1AF67717A70F055B8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVPSwiftTests/Pods-MVPSwiftTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MVPSwift/Pods-MVPSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E64502AF34961E882FCC1D1A /* [CP] Check Pods Manifest.lock */ = {
@@ -460,13 +395,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVPSwiftUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F16CB621CE1E237DB0ED40EB /* [CP] Check Pods Manifest.lock */ = {
@@ -475,28 +413,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVPSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F8776668B31094F4D8605C00 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVPSwiftUITests/Pods-MVPSwiftUITests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -506,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F360CF041E2E6A3A00691EEF /* PeopleViewController.swift in Sources */,
+				899A3FF82287171900AE0C65 /* PeopleViewController.swift in Sources */,
 				F360CF001E2E66D100691EEF /* PeoplePresenter.swift in Sources */,
 				F360CF021E2E678E00691EEF /* PeopleService.swift in Sources */,
 				F32E0DC61E2D23990068B4C5 /* APICallManager.swift in Sources */,

@@ -1,6 +1,7 @@
 //
-//  ContactsModel.swift
+//  PeopleModel.swift
 //  MVPSwift
+//  Model Class
 //
 //  Created by Nanda w Perdana on 1/16/17.
 //  Copyright © 2017 Nanda w Perdana. All rights reserved.

@@ -1,6 +1,7 @@
 //
-//  ContactViewController.swift
+//  PeopleViewController.swift
 //  MVPSwift
+//  The App Main ViewController (has only one presenter).
 //
 //  Created by Nanda w Perdana on 1/17/17.
 //  Copyright © 2017 Nanda w Perdana. All rights reserved.
@@ -51,7 +52,6 @@ extension PeopleViewController: UITableViewDataSource {
 }
 
 extension PeopleViewController: PeopleView {
-    
     func startLoading() {
         // Show your loader
         activityIndicator?.startAnimating()

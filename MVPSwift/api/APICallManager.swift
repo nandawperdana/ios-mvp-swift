@@ -1,6 +1,7 @@
 //
 //  APICallManager.swift
 //  MVPSwift
+//  Populate all API caller methods.
 //
 //  Created by Nanda w Perdana on 1/16/17.
 //  Copyright © 2017 Nanda w Perdana. All rights reserved.
@@ -24,10 +25,9 @@ class APICallManager {
         case People = "/people.json"
     }
     
-    // MARK: Contact
-    func callAPIGetPeople(
-        onSuccess successCallback: ((_ people: [PeopleModel]) -> Void)?,
-        onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    // MARK: People API
+    func callAPIGetPeople(onSuccess successCallback: ((_ people: [PeopleModel]) -> Void)?,
+                          onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
         
         // Build URL
         let url = API_BASE_URL + Endpoint.People.rawValue
@@ -52,10 +52,10 @@ class APICallManager {
                 } else {
                     failureCallback?("An error has occured.")
                 }
-        },
+            },
             onFailure: {(errorMessage: String) -> Void in
                 failureCallback?(errorMessage)
-        }
+            }
         )
     }
     
@@ -67,7 +67,8 @@ class APICallManager {
         headers: [String: String]?,
         parameters: AnyObject?,
         onSuccess successCallback: ((JSON) -> Void)?,
-        onFailure failureCallback: ((String) -> Void)?) {
+        onFailure failureCallback: ((String) -> Void)?
+        ) {
         
         Alamofire.request(url, method: method).validate().responseJSON { response in
             switch response.result {
