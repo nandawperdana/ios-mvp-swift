@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "97D6B88246AAA7AF016D77597D3DD1D0"
+               BlueprintIdentifier = "ED9B3A4F887FC5FAF745BE24CCAD7E8E"
                BuildableName = "Pods_MVPSwiftTests.framework"
                BlueprintName = "Pods-MVPSwiftTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97D6B88246AAA7AF016D77597D3DD1D0"
+            BlueprintIdentifier = "ED9B3A4F887FC5FAF745BE24CCAD7E8E"
             BuildableName = "Pods_MVPSwiftTests.framework"
             BlueprintName = "Pods-MVPSwiftTests"
             ReferencedContainer = "container:Pods.xcodeproj">
