@@ -1,5 +1,5 @@
 //
-//  PeopleModel.swift
+//  People.swift
 //  MVPSwift
 //  Model Class
 //
@@ -9,14 +9,14 @@
 
 import Foundation
 
-class PeopleModel {
+class People {
     var id: String?
     var name: String?
     var email: String?
     var address: String?
     var gender: String?
     var pic: String?
-    var phone: PhoneModel?
+    var phone: Phone?
     
     // MARK: Instance Method
     func loadFromDictionary(_ dict: [String: AnyObject]) {
@@ -39,19 +39,19 @@ class PeopleModel {
             self.pic = data
         }
         if let data = dict["phone"] as? [String:AnyObject] {
-            self.phone = PhoneModel.build(data)
+            self.phone = Phone.build(data)
         }
     }
     
     // MARK: Class Method
-    class func build(_ dict: [String: AnyObject]) -> PeopleModel {
-        let contact = PeopleModel()
+    class func build(_ dict: [String: AnyObject]) -> People {
+        let contact = People()
         contact.loadFromDictionary(dict)
         return contact
     }
 }
 
-class PhoneModel {
+class Phone {
     var mobile: String?
     var home: String?
     var office: String?
@@ -70,8 +70,8 @@ class PhoneModel {
     }
     
     // MARK: Class Method
-    class func build(_ dict: [String: AnyObject]) -> PhoneModel {
-        let phone = PhoneModel()
+    class func build(_ dict: [String: AnyObject]) -> Phone {
+        let phone = Phone()
         phone.loadFromDictionary(dict)
         return phone
     }

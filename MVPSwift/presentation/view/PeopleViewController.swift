@@ -9,25 +9,50 @@
 
 import UIKit
 
-class ContactTableViewCell: UITableViewCell {
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelSubtitle: UILabel!
-}
-
 class PeopleViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    let adapter = PeopleAdapter()
+    
+    lazy var listView: UITableView = {
+        let view = UITableView()
+        view.showsHorizontalScrollIndicator = false
+        view.showsVerticalScrollIndicator = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = adapter.self
+        view.dataSource = adapter
+        view.separatorStyle = .singleLine
+        view.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        view.rowHeight = UITableView.automaticDimension
+        view.estimatedRowHeight = 100
+        view.backgroundColor = .white
+        view.register(PeopleCell.self, forCellReuseIdentifier: adapter.identifier)
+        
+        return view
+    }()
+    
+    var safeArea: UILayoutGuide!
     
     let presenter = PeoplePresenter(peopleService: PeopleService())
-    var peopleToDisplay = [PeopleViewData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView?.dataSource = self
-        activityIndicator?.hidesWhenStopped = true
-        
         presenter.attachView(view: self)
+        adapter.delegate = self
+        
+        view.backgroundColor = .clear
+        safeArea = view.layoutMarginsGuide
+        
+        view.addSubview(listView)
+        
+        NSLayoutConstraint.activate([
+            listView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            listView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            listView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            listView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            listView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            listView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+        ])
+        
+        // load data
         presenter.getPeople()
     }
     
@@ -37,38 +62,42 @@ class PeopleViewController: UIViewController {
     }
 }
 
-extension PeopleViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peopleToDisplay.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
-        let peopleViewData = peopleToDisplay[indexPath.row]
-        cell.labelTitle?.text = peopleViewData.name
-        cell.labelSubtitle?.text = peopleViewData.email
-        return cell
+extension PeopleViewController: PeopleAdapterDelegate {
+    func didTap(_ item: People) {
+        guard let name = item.name else { return }
+        showToast(message: "Name: \(name)")
     }
 }
 
 extension PeopleViewController: PeopleView {
+    func showToast(message: String, duration: Double = 1) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = .black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+        
+        self.present(alert, animated: false)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
+            alert.dismiss(animated: true)
+        }
+    }
+    
     func startLoading() {
-        // Show your loader
-        activityIndicator?.startAnimating()
+        listView.isHidden = true
     }
     
     func finishLoading() {
-        // Dismiss your loader
-        activityIndicator?.stopAnimating()
+        listView.isHidden = false
     }
     
-    func setPeople(people: [PeopleViewData]) {
-        peopleToDisplay = people
-        tableView?.isHidden = false
-        tableView?.reloadData()
+    func setPeople(people: [People]) {
+        adapter.list = people
+        listView.isHidden = false
+        listView.reloadData()
     }
     
     func setEmptyPeople() {
-        tableView?.isHidden = true
+        listView.isHidden = true
     }
 }

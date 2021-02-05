@@ -9,13 +9,57 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
+    var tabBarController: UITabBarController?
 
+    var viewController: UIViewController? {
+        let navController = tabBarController?.selectedViewController as? UINavigationController
+        return navController?.visibleViewController
+    }
+    
+    enum TabIndex: Int {
+        case people
+        case more
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        tabBarController = UITabBarController()
+        tabBarController?.delegate = self
+        
+        let peopleVC = PeopleViewController()
+        let moreVC = UIViewController()
+        
+        let tabViews = [
+            peopleVC,
+            moreVC
+        ]
+        
+        peopleVC.title = "People"
+        moreVC.title = "More"
+        
+        if #available(iOS 13.0, *) {
+            peopleVC.tabBarItem = UITabBarItem(title: "People", image: UIImage(systemName: "house"), selectedImage: nil)
+            moreVC.tabBarItem = UITabBarItem(title: "More", image: UIImage(systemName: "bell"), selectedImage: nil)
+        } else {
+            peopleVC.tabBarItem = UITabBarItem(title: "People", image: nil, selectedImage: nil)
+            moreVC.tabBarItem = UITabBarItem(title: "More", image: nil, selectedImage: nil)
+        }
+        
+        tabBarController?.viewControllers = tabViews.compactMap { UINavigationController(rootViewController: $0) }
+        tabBarController?.tabBar.barTintColor = .lightGray
+        tabBarController?.tabBar.unselectedItemTintColor = .darkGray
+        tabBarController?.tabBar.tintColor = .black
+        
+        UINavigationBar.appearance().tintColor = .white
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .clear
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -43,4 +87,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

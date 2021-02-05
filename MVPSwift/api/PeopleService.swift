@@ -11,7 +11,7 @@
 import Foundation
 
 class PeopleService {
-    public func callAPIGetPeople(onSuccess successCallback: ((_ people: [PeopleModel]) -> Void)?,
+    public func callAPIGetPeople(onSuccess successCallback: ((_ people: [People]) -> Void)?,
                                  onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
         APICallManager.instance.callAPIGetPeople(
             onSuccess: { (people) in

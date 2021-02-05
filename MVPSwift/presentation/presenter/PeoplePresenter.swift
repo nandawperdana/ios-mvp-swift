@@ -9,29 +9,25 @@
 //  Copyright © 2017 Nanda w Perdana. All rights reserved.
 //
 
-import Foundation
-
-struct PeopleViewData{
-    let name: String
-    let email: String
-}
+import UIKit
 
 protocol PeopleView: NSObjectProtocol {
+    func showToast(message: String, duration: Double)
     func startLoading()
     func finishLoading()
-    func setPeople(people: [PeopleViewData])
+    func setPeople(people: [People])
     func setEmptyPeople()
 }
 
 class PeoplePresenter {
-    private let peopleService:PeopleService
-    weak private var peopleView : PeopleView?
+    private let peopleService: PeopleService
+    weak private var peopleView: PeopleView?
     
-    init(peopleService:PeopleService) {
+    init(peopleService: PeopleService) {
         self.peopleService = peopleService
     }
     
-    func attachView(view:PeopleView) {
+    func attachView(view: PeopleView) {
         peopleView = view
     }
     
@@ -40,21 +36,19 @@ class PeoplePresenter {
     }
     
     func getPeople() {
-        self.peopleView?.startLoading()
+        peopleView?.startLoading()
         peopleService.callAPIGetPeople(
-            onSuccess: { (people) in
-                self.peopleView?.finishLoading()
+            onSuccess: { [weak self] people in
+                guard let ws = self else { return }
+                ws.peopleView?.finishLoading()
                 if (people.count == 0){
-                    self.peopleView?.setEmptyPeople()
+                    ws.peopleView?.setEmptyPeople()
                 } else {
-                    let mappedUsers = people.map {
-                        return PeopleViewData(name: "\($0.name!)", email: "\($0.email!)")
-                    }
-                    self.peopleView?.setPeople(people: mappedUsers)
+                    ws.peopleView?.setPeople(people: people)
                 }
             },
-            onFailure: { (errorMessage) in
-                self.peopleView?.finishLoading()
+            onFailure: { [weak self] errorMessage in
+                self?.peopleView?.finishLoading()
             }
         )
     }

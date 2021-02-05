@@ -26,7 +26,7 @@ class APICallManager {
     }
     
     // MARK: People API
-    func callAPIGetPeople(onSuccess successCallback: ((_ people: [PeopleModel]) -> Void)?,
+    func callAPIGetPeople(onSuccess successCallback: ((_ people: [People]) -> Void)?,
                           onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
         
         // Build URL
@@ -41,9 +41,9 @@ class APICallManager {
                     let peopleDict = responseDict as! [[String:AnyObject]]
                     
                     // Create object
-                    var data = [PeopleModel]()
+                    var data = [People]()
                     for item in peopleDict {
-                        let single = PeopleModel.build(item)
+                        let single = People.build(item)
                         data.append(single)
                     }
                     

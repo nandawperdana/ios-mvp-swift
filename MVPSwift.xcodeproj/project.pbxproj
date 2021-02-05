@@ -10,15 +10,16 @@
 		30A0A6602B5A0A404767C58B /* Pods_MVPSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55158352D4095BDBD14EC85 /* Pods_MVPSwift.framework */; };
 		4E5133C81DAD1FA4AB1589E5 /* Pods_MVPSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D0283D4454B6612DBB3A16 /* Pods_MVPSwiftTests.framework */; };
 		5D924A25774C2215AED357FF /* Pods_MVPSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4876263E14204855A83599B /* Pods_MVPSwiftUITests.framework */; };
+		893D493225CD859A00D6BADD /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D493125CD859A00D6BADD /* PeopleCell.swift */; };
+		893D493725CD85C100D6BADD /* PeopleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D493625CD85C100D6BADD /* PeopleAdapter.swift */; };
 		899A3FF82287171900AE0C65 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899A3FF72287171900AE0C65 /* PeopleViewController.swift */; };
 		F32E0D8C1E2D15760068B4C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0D8B1E2D15760068B4C5 /* AppDelegate.swift */; };
-		F32E0D911E2D15760068B4C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32E0D8F1E2D15760068B4C5 /* Main.storyboard */; };
 		F32E0D931E2D15760068B4C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32E0D921E2D15760068B4C5 /* Assets.xcassets */; };
 		F32E0D961E2D15760068B4C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32E0D941E2D15760068B4C5 /* LaunchScreen.storyboard */; };
 		F32E0DA11E2D15760068B4C5 /* MVPSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DA01E2D15760068B4C5 /* MVPSwiftTests.swift */; };
 		F32E0DAC1E2D15760068B4C5 /* MVPSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DAB1E2D15760068B4C5 /* MVPSwiftUITests.swift */; };
 		F32E0DC61E2D23990068B4C5 /* APICallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DC51E2D23990068B4C5 /* APICallManager.swift */; };
-		F32E0DCE1E2D30940068B4C5 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */; };
+		F32E0DCE1E2D30940068B4C5 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32E0DCD1E2D30940068B4C5 /* People.swift */; };
 		F360CF001E2E66D100691EEF /* PeoplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */; };
 		F360CF021E2E678E00691EEF /* PeopleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360CF011E2E678E00691EEF /* PeopleService.swift */; };
 /* End PBXBuildFile section */
@@ -47,13 +48,14 @@
 		5FD52004AF0AB61D420D5F71 /* Pods-MVPSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPSwift/Pods-MVPSwift.release.xcconfig"; sourceTree = "<group>"; };
 		69D0283D4454B6612DBB3A16 /* Pods_MVPSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B1C081FEBC4E7FB6FF00DB /* Pods-MVPSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPSwiftUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPSwiftUITests/Pods-MVPSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		893D493125CD859A00D6BADD /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		893D493625CD85C100D6BADD /* PeopleAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleAdapter.swift; sourceTree = "<group>"; };
 		899A3FF72287171900AE0C65 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		C4876263E14204855A83599B /* Pods_MVPSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55158352D4095BDBD14EC85 /* Pods_MVPSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVPSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEAFF0B0D8D9309C7D6C4452 /* Pods-MVPSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVPSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVPSwiftTests/Pods-MVPSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		F32E0D881E2D15760068B4C5 /* MVPSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32E0D8B1E2D15760068B4C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F32E0D901E2D15760068B4C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F32E0D921E2D15760068B4C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F32E0D951E2D15760068B4C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F32E0D971E2D15760068B4C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		F32E0DAB1E2D15760068B4C5 /* MVPSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSwiftUITests.swift; sourceTree = "<group>"; };
 		F32E0DAD1E2D15760068B4C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F32E0DC51E2D23990068B4C5 /* APICallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICallManager.swift; sourceTree = "<group>"; };
-		F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
+		F32E0DCD1E2D30940068B4C5 /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		F360CEFF1E2E66D100691EEF /* PeoplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePresenter.swift; sourceTree = "<group>"; };
 		F360CF011E2E678E00691EEF /* PeopleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,7 +151,6 @@
 				F32E0DC01E2D23720068B4C5 /* presentation */,
 				F32E0DC41E2D23720068B4C5 /* model */,
 				F32E0D8B1E2D15760068B4C5 /* AppDelegate.swift */,
-				F32E0D8F1E2D15760068B4C5 /* Main.storyboard */,
 				F32E0D921E2D15760068B4C5 /* Assets.xcassets */,
 				F32E0D941E2D15760068B4C5 /* LaunchScreen.storyboard */,
 				F32E0D971E2D15760068B4C5 /* Info.plist */,
@@ -205,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				899A3FF72287171900AE0C65 /* PeopleViewController.swift */,
+				893D493125CD859A00D6BADD /* PeopleCell.swift */,
+				893D493625CD85C100D6BADD /* PeopleAdapter.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -212,7 +215,7 @@
 		F32E0DC41E2D23720068B4C5 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				F32E0DCD1E2D30940068B4C5 /* PeopleModel.swift */,
+				F32E0DCD1E2D30940068B4C5 /* People.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -331,7 +334,6 @@
 			files = (
 				F32E0D961E2D15760068B4C5 /* LaunchScreen.storyboard in Resources */,
 				F32E0D931E2D15760068B4C5 /* Assets.xcassets in Resources */,
-				F32E0D911E2D15760068B4C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,9 +437,11 @@
 			files = (
 				899A3FF82287171900AE0C65 /* PeopleViewController.swift in Sources */,
 				F360CF001E2E66D100691EEF /* PeoplePresenter.swift in Sources */,
+				893D493225CD859A00D6BADD /* PeopleCell.swift in Sources */,
 				F360CF021E2E678E00691EEF /* PeopleService.swift in Sources */,
+				893D493725CD85C100D6BADD /* PeopleAdapter.swift in Sources */,
 				F32E0DC61E2D23990068B4C5 /* APICallManager.swift in Sources */,
-				F32E0DCE1E2D30940068B4C5 /* PeopleModel.swift in Sources */,
+				F32E0DCE1E2D30940068B4C5 /* People.swift in Sources */,
 				F32E0D8C1E2D15760068B4C5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,14 +478,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F32E0D8F1E2D15760068B4C5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F32E0D901E2D15760068B4C5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F32E0D941E2D15760068B4C5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
