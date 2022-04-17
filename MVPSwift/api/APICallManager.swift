@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Foundation
 
-let API_BASE_URL = "http://api.nandawperdana.com"
+let API_BASE_URL = "https://nandawperdana.com"
 
 class APICallManager {
     static let instance = APICallManager()
@@ -68,12 +68,12 @@ class APICallManager {
         parameters: AnyObject?,
         onSuccess successCallback: ((JSON) -> Void)?,
         onFailure failureCallback: ((String) -> Void)?
-        ) {
+    ) {
         
-        Alamofire.request(url, method: method).validate().responseJSON { response in
+        AF.request(url, method: method).response { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)
+                let json = JSON(value as Any)
                 successCallback?(json)
             case .failure(let error):
                 if let callback = failureCallback {

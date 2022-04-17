@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PeopleAdapterDelegate: class {
+protocol PeopleAdapterDelegate: AnyObject {
     func didTap(_ item: People)
 }
 
